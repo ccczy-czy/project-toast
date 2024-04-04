@@ -13,7 +13,7 @@ function ToastProvider({ children }) {
     (newToast) => {
       setToasts([...toasts, newToast]);
     },
-    [toasts, setToasts]
+    [toasts]
   );
 
   const deleteToast = React.useCallback(
@@ -23,12 +23,12 @@ function ToastProvider({ children }) {
       });
       setToasts(nextToasts);
     },
-    [toasts, setToasts]
+    [toasts]
   );
 
   const deleteAllToasts = React.useCallback(() => {
     setToasts([]);
-  }, [setToasts]);
+  }, []);
 
   return (
     <ToastContext.Provider
